@@ -1459,15 +1459,17 @@ section,
 }
 
 .features-cards.section {
-  background-color: #EBE6DD;
-  background-image:url(assets/img/Fondo-1.jpg);
+  background-color: #059652;
+  background-image: url(../img/FondoCaracterísticas.png);
   background-size: cover;        /* Para que se estire y cubra toda la sección */
   background-position: center;   /* Para centrarla */
   background-repeat: no-repeat;  /* Para que no se repita */
   min-height: 500px;
 }
 
-
+#features-cards .combined-title {
+  text-align: center;
+}
 
 .features-cards .feature-box h4 {
   font-family: 'DM Sans', sans-serif;
