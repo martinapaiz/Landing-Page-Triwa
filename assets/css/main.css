@@ -545,14 +545,50 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  display: grid;
+  place-items: center;   /* centra vertical y horizontal */
+  min-height: 100vh;     /* ocupa toda la altura visible */
+  padding: 40px 20px;    /* espacio interno, ajustable */
+  background-color: #EBE6DD !important;
+  
   font-size: 14px;
   position: relative;
+  box-sizing: border-box;
+  margin-top: -300px;
+}
+
+.footer-box {
+  background-color: #FBFAF8;
+  max-width: 1270px;
+  width: 100%;
+  padding: 60px 40px;
+  border-radius: 22.69px;
+  box-sizing: border-box;
+}
+
+/* Tipografía y estilos específicos para h4 y p dentro de footer-contact */
+.footer-contact h4, 
+.footer-contact p {
+  font-family: 'DM Sans', sans-serif;  /* fuente consistente */
+  color: #38455A;                      /* color texto */
+  margin-bottom: 16px;                 /* separación uniforme */
+}
+
+/* Peso y tamaño para el h4 */
+.footer-contact h4 {
+  font-weight: 700;    /* negrita */
+  font-size: 24px;     /* tamaño ajustable */
+}
+
+/* Peso y tamaño para el p */
+.footer-contact p {
+  font-weight: 400;    /* normal */
+  font-size: 16px;     /* tamaño legible */
+  line-height: 1.5;    /* buena legibilidad */
 }
 
 .footer .footer-top {
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 .footer .footer-about .logo {
@@ -599,7 +635,8 @@ h6 {
 
 .footer h4 {
   font-size: 16px;
-  font-weight: bold;
+  font-family: var(--default-font);
+  font-weight: 500;
   position: relative;
   padding-bottom: 12px;
 }
@@ -641,7 +678,9 @@ h6 {
 }
 
 .footer .footer-contact p {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  font-family: var(--default-font);
+  color: #38455A;
 }
 
 .footer .copyright {
@@ -834,7 +873,7 @@ section,
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--accent-color), transparent 92%), transparent 40%);
+  background: radial-gradient(circle at 90% 10%, color-mix(in srgb, , transparent 92%), transparent 40%);
   pointer-events: none;
 }
 
@@ -1383,7 +1422,7 @@ section,
 
 .features .cuadroreloj {
   padding-right: 0px;
-  padding-left: 228px;
+  padding-left: 180px;
 }
 
 
@@ -1430,8 +1469,10 @@ section,
   font-size: 53.22px;
   line-height: 120%;
   color: #38455A;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
+
+
 
 .combined-title .dm-serif-text {
   font-family: "DM Serif Text", serif;
@@ -1448,6 +1489,18 @@ section,
   font-family: "DM Sans", sans-serif;
   margin: 0; /* opcional si querés resetear márgenes */
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*--------------------------------------------------------------
@@ -1471,6 +1524,20 @@ section,
   text-align: center;
 }
 
+.combined-title-center {
+  text-align: center;
+  font-family: "Dm Sans", sans-serif;
+  font-weight: 500;
+  font-size: 53.22px;
+  line-height: 120%;
+  color: #38455A;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;  /* toda la altura del viewport */
+}
+
 .features-cards .feature-box h4 {
   font-family: 'DM Sans', sans-serif;
   font-size: 22px;
@@ -1492,7 +1559,7 @@ section,
 .features-cards .feature-box {
   height: 100%;
   padding: 40px 30px;
-  border-radius: 14px;
+  border-radius: 22.69px;
 }
 
 .features-cards .feature-box i {
@@ -1609,7 +1676,30 @@ section,
 /*--------------------------------------------------------------
 # 2do Destacado
 --------------------------------------------------------------*/
+.vector-fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;       /* ocupa todo el ancho de la pantalla */
+  max-width: 100%;    /* asegura que no se desborde */
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.15;      /* opcional, si querés un fondo más sutil */
+}
 
+/* Contenido por encima */
+#testimonials .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Para que el contenido quede arriba */
+.testimonials .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* Subtítulo superior */
 .subtitulo {
@@ -1623,6 +1713,8 @@ section,
     margin-bottom: -20px;
     padding-bottom: 0px;
 }
+
+
 
 .puntos-serif-centrados {
   font-family: "DM Serif Text", serif;
@@ -1686,7 +1778,8 @@ section,
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
+  
 }
 
 .call-to-action .content h2 {
@@ -1769,6 +1862,45 @@ section,
 }
 
 
+/* Fondo personalizado */
+.new-beach-section .container {
+  background-image: url(../img/Sépartedelcambio.png);
+  background-size: cover;
+  background-position: center;
+  padding: 12rem 2rem; /* Ajustás según lo que se necesite */
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+/* Botón con estilo exacto */
+.btn-cta-custom {
+  display: inline-block;
+  width: 390.81px;
+  height: 67px;
+  line-height: 67px;
+  background-color: #FBFAF8;
+  color: #38455A;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 35px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+
+/* Hover: agranda + cambia color */
+.btn-cta-custom:hover {
+  color: #FF7A4A;
+  transform: scale(1.05);
+}
+
+/* Active: agranda un poco más (efecto al hacer clic) */
+.btn-cta-custom:active {
+  transform: scale(1.08);
+}
+
+
 
 /*--------------------------------------------------------------
 # Call To Action 2 Section
@@ -1810,6 +1942,88 @@ section,
   border-color: var(--contrast-color);
 }
 
+
+
+
+
+
+
+
+#call-to-action-2 {
+  background-color: #FBFAF8;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.linea {
+  font-size: 89.35px;
+  font-family: "Dm Sans", sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.punto-serif-animado {
+  font-family: "DM Serif Text", serif;
+  font-size: 60px;
+  color: var(--accent-color);
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+
+
+.combined-title-animado {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-size: 94.61px; /* puede heredar o estar definido acá si es distinto */
+}
+
+.texto-movible {
+  display: inline-block;
+  padding-left: 0;
+  animation-name: moverIzquierda;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  color: #38455A;
+  white-space: nowrap;
+}
+
+/* Primera línea animación */
+.linea:nth-child(1) .texto-movible {
+  animation-duration: 120s;
+  animation-delay: -20s;
+}
+
+/* Segunda línea animación */
+.linea:nth-child(2) .texto-movible {
+  animation-duration: 120s;
+  animation-delay: 0s;
+}
+
+@keyframes moverIzquierda {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Modelos
 --------------------------------------------------------------*/
@@ -1821,8 +2035,12 @@ section,
   display: block;
   margin-left: 0 !important;
   margin-right: 50px !important;
+  margin-bottom: 65px;
 }
 
+.margen {
+  margin-bottom: 100px;
+}
 
 .col-lg-6.texto-reloj {
   margin-left: 80px;
@@ -2080,6 +2298,87 @@ section,
 .services .service-card .read-more:hover i {
   transform: translateX(5px);
 }
+
+
+/* Fondo marrón */
+.brown-background {
+  background-color: #EBE6DD;
+  padding: 4rem 0;
+}
+
+.imagenes-cartas{
+  max-width: 315px;
+  margin-bottom: -103px;
+}
+
+/* Imagen fuera del card */
+.modelo-img-outside {
+  position: absolute;
+  top: -400px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 315px;
+  z-index: 1;
+}
+
+/* Imagen fuera del card */
+.modelo-img-outside2 {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 315px;
+  z-index: 1;
+}
+
+.modelo-img-outside img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Card blanca flotando debajo */
+.modelo-card {
+  background: #FBFAF8;
+  padding: 2rem 2rem 2rem;
+  border-radius: 22.69px;
+  width: 90%;  /* se ajusta al 90% del contenedor */
+  max-width: 362px;
+  position: relative;
+  z-index: 2;
+  margin-top: 60px; /* deja espacio para la imagen fuera */
+  text-align: left;
+}
+
+.conjunto-imagen-carta{
+  text-align: -webkit-center;
+}
+
+/* Textos */
+.modelo-title {
+  color: #ff774e;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: -0.2rem;
+  font-family: var(--default-font);
+}
+
+.puntos {
+  color: #ff774e;
+  font-size: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.modelo-text {
+  font-size: 16px;
+  color: #444;
+}
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Pricing Section
