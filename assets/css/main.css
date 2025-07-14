@@ -37,7 +37,7 @@
   --background-color: #FBFAF8; /* Background color for the entire website, including individual sections */
   --default-color: #38455A; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #38455A; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #FF7A4A; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #ff7a4a; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #FBFAF8; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #FBFAF8; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -49,7 +49,7 @@
   --nav-mobile-background-color: #FBFAF8; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #FBFAF8; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #38455A; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #0d83fd; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #ff7a4a; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -60,10 +60,10 @@
 }
 
 .dark-background {
-  --background-color: #0d83fd;
+  --background-color: #ff7a4a;
   --default-color: #38455A;
   --heading-color: #FBFAF8;
-  --surface-color: #409dfd;
+  --surface-color: #ff7a4a;
   --contrast-color: #FBFAF8;
 }
 
@@ -280,10 +280,15 @@ h6 {
 
 @media (max-width: 1200px) {
   .header {
-    padding-top: 10px;
+     width: 405px;
+    margin: 0 auto; /* para centrarlo */
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
 
   .header .header-container {
+        width: 100%;
+    padding: 20px 15px;
     margin-left: 10px;
     margin-right: 10px;
     padding: 10px 5px 10px 15px;
@@ -554,7 +559,8 @@ h6 {
   font-size: 14px;
   position: relative;
   box-sizing: border-box;
-  margin-top: -300px;
+  margin-top: -200px;
+  margin-bottom: -300px;
 }
 
 .footer-box {
@@ -786,7 +792,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 90px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -1108,6 +1114,55 @@ section,
   }
 }
 
+
+@media (max-width: 768px) {
+  .hero {
+  display: block; /* deja de centrar con flex */
+  min-height: 932px; /* ✅ asegurá altura mínima */
+  height: 932px;
+  background-image: url('../img/HeroMobile.png');
+  background-size: cover;
+  background-position: center top;
+  padding: 0;
+  position: relative;
+  }
+
+  .hero .hero-content {
+  margin-top: 562px; /* ajustá este número hasta que quede bien */
+  padding: 0 20px;
+  width: 100%;
+  text-align: center;
+  position: relative; /* 🔑 asegurá que quede por encima */
+  z-index: 2;
+  
+  }
+
+  .hero .hero-content h1 {
+    font-size: 63px !important;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .hero .hero-content p {
+    font-size: 18px !important;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero .company-badge {
+    font-size: 25px !important;
+    margin-bottom: 12px;
+  }
+}
+
+
+
+
+
+
+
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1338,6 +1393,100 @@ section,
   margin: 0;
 }
 
+
+@media (max-width: 768px) {
+
+  .features .row > div:first-child {
+    order: 2; /* Imagen */
+  }
+
+  .features .row > div:last-child {
+    order: 1; /* Texto */
+  }
+
+
+
+  /* Contenedor cambia a columna */
+  .features .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra los bloques */
+  }
+
+  /* Contenedores de texto: ancho limitado y centrado horizontal */
+  .features .col-lg-6.d-flex.flex-column,
+  .features .col-lg-6.order-2.order-lg-1,
+  .features .col-lg-6.order-1.order-lg-2 {
+    width: 90%;
+    max-width: 400px;  /* ajustá según prefieras */
+    margin: 0 auto;
+    text-align: left;
+    order: 1 !important; /* texto primero */
+  }
+
+  /* Imágenes: tamaño 65% y orden para que queden abajo */
+  .img-sin-margen-izq,
+  .img-sin-margen-dere {
+    width: 407px; /* 627 * 0.65 */
+    height: auto;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    order: 2 !important; /* imagen después del texto */
+    align-self: stretch; /* que ocupe todo el ancho posible */
+  }
+
+  /* Fuentes escaladas 0.65x */
+  .subtitulo {
+    font-size:18.48px !important; /* 30 * 0.65 */
+  }
+
+  .puntos-serif {
+    font-size: 29.58px !important; /* 48 * 0.65 */
+  }
+
+  .combined-title {
+    font-size: 37.26px !important; /* 53.22 * 0.65 */
+    margin-bottom: 10px; /* ajustar si hace falta */
+  }
+
+  .combined-title .dm-serif-text {
+    font-size: 39.44px !important; /* 56.34 * 0.65 */
+  }
+
+  .descripcion {
+    font-size: 14.8px !important; /* 21 * 0.65 */
+    line-height: 1.4;
+  }
+
+  /* Ajuste para padding lateral en el contenedor padre para que la imagen llegue al borde */
+  .features.section,
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Opcional: si querés que la imagen ocupe todo el ancho (adaptando a móvil) */
+  .img-sin-margen-izq,
+  .img-sin-margen-dere {
+    width: 100%;
+    max-width: 407px;
+  }
+
+    .features .col-lg-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .features .cuadroreloj {
+    padding-left:  0 !important;
+    padding-right: 0 !important;
+  }
+    }
+
+
+
+
+
 @media (max-width: 468px) {
   .features .nav-link {
     padding: 8px 20px;
@@ -1502,7 +1651,6 @@ section,
 
 
 
-
 /*--------------------------------------------------------------
 # Features Cards Section
 --------------------------------------------------------------*/
@@ -1613,6 +1761,29 @@ section,
   color: #FBFAF8;
 }
 
+
+@media (max-width: 768px) {
+  .features-cards.section {
+    background-image: url('../img/FondoCaracterísticasMobile.png'); /* tu imagen mobile */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #features-cards .col-md-6 {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  #features-cards .feature-box {
+    width: 310px;     /* O el ancho exacto que tienen en desktop */
+    max-width: 100%;  /* Por si hay pantallas más chicas */
+    margin: 0 auto;   /* Centrado */
+  }
+}
+
+
+
 /*--------------------------------------------------------------
 # Features 2 Section
 --------------------------------------------------------------*/
@@ -1676,17 +1847,20 @@ section,
 /*--------------------------------------------------------------
 # 2do Destacado
 --------------------------------------------------------------*/
+
+
 .vector-fondo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;       /* ocupa todo el ancho de la pantalla */
-  max-width: 100%;    /* asegura que no se desborde */
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.15;      /* opcional, si querés un fondo más sutil */
+  top: 0;
+  left: 0;
+  width: 100vw; /* ancho completo de la ventana */
+  height: auto;
+  z-index: 0; /* por detrás del contenido */
+  pointer-events: none; /* evita que interfiera con clicks */
+  margin-top: 300px;
 }
+
+
 
 /* Contenido por encima */
 #testimonials .container {
@@ -1733,8 +1907,8 @@ section,
 
 /* Imágenes con forma de media elipse inferior */
 .img-mediaelipse {
-  width: 489.14px;
-  height: 560.75px;
+  width: 401.42px;
+  height: 460px;
   object-fit: cover;
   margin-bottom: 24px;
 }
@@ -1742,18 +1916,19 @@ section,
 /* Título debajo de cada imagen */
 .titulo-imagen {
   font-family: "DM Sans", sans-serif;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 500;
   color: #38455A;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+  margin-top: 20px;
 }
 
 /* Texto debajo del título */
 .texto-imagen {
-  font-size: 21.12px;
+  font-size: 21px;
   font-weight: 400;
   color: #38455A;
-  max-width: 500px;
+  max-width: 445px;
   line-height: 150%;
 }
 
@@ -1763,6 +1938,47 @@ section,
     --bs-gutter-x: 102px;
   }
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  .subtitulo {
+    font-size: calc(26.41px * 0.7); /* ≈ 18.5px */
+  }
+
+  .puntos-serif-centrados {
+    font-size: calc(40px * 0.7); /* ≈ 28px */
+  }
+
+  .combined-title {
+    font-size: calc(36px * 0.7); /* ≈ 25px */
+  }
+
+  .combined-title .dm-serif-text {
+    font-size: calc(36px * 0.7); /* ≈ 25px, ajustalo si tenés otro valor */
+  }
+
+  .titulo-imagen {
+    font-size: calc(40px * 0.7); /* ≈ 28px */
+  }
+
+  .texto-imagen {
+    font-size: calc(21px * 0.7); /* ≈ 15px */
+    max-width: 90%;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .img-mediaelipse {
+    width: 70%;
+    height: auto;
+  }
+}
+
 
 
 
@@ -2020,6 +2236,27 @@ section,
   }
 }
 
+@media (max-width: 576px) {
+  .linea {
+    font-size: 40px; /* en lugar de 89.35px */
+  }
+
+  .combined-title-animado {
+    font-size: 44px; /* en lugar de 94.61px */
+  }
+
+  .punto-serif-animado {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  #call-to-action-2 {
+    margin-top: -80px; /* o el valor que necesites */
+    margin-bottom: -80px;
+  }
+}
 
 
 
@@ -2086,6 +2323,105 @@ section,
 
 .color-option.active .color-description {
   opacity: 1;
+}
+
+@media (max-width: 576px) {
+  #Modelos .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto-modelo {
+    order: 1;
+  }
+
+  .imagen-modelo {
+    order: 2;
+  }
+
+  .color-selector {
+    order: 3;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 25px;
+  }
+
+  .subtitulo {
+    font-size: 21px;
+  }
+
+  .puntos-serif {
+    font-size: 34px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+  }
+
+  .combined-title {
+    font-size: 38px;
+    line-height: 110%;
+    margin-bottom: 20px;
+  }
+
+  .combined-title .dm-serif-text {
+    font-size: 40px;
+  }
+
+  .img-sin-margen-izq-modelos {
+    width: 70%;
+    height: auto;
+    margin: 30px auto;
+  }
+
+  .color-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .color-description {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  #Modelos .row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Orden de las columnas dentro de .row */
+  .texto-modelo {
+    order: 1 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imagen-modelo {
+    order: 2 !important;
+    margin: 30px 0;
+  }
+
+  /* Dentro de texto-modelo, ordenar el texto principal y los colores */
+  .texto-principal {
+    order: 1;
+  }
+
+  .color-selector {
+    order: 3;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 }
 
 
@@ -2298,6 +2634,10 @@ section,
 .services .service-card .read-more:hover i {
   transform: translateX(5px);
 }
+
+
+
+
 
 
 /* Fondo marrón */
