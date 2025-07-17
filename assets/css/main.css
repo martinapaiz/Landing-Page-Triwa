@@ -75,6 +75,9 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
+
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -190,6 +193,8 @@ h6 {
 @media (max-width: 1200px) {
   .header {
     padding-top: 10px;
+      position: static !important;
+      display: none !important;
   }
 
   .header .header-container {
@@ -552,22 +557,22 @@ h6 {
 .footer {
   display: grid;
   place-items: center;   /* centra vertical y horizontal */
-  min-height: 100vh;     /* ocupa toda la altura visible */
+  min-height: 600px;     /* ocupa toda la altura visible */
   padding: 40px 20px;    /* espacio interno, ajustable */
   background-color: #EBE6DD !important;
   
   font-size: 14px;
   position: relative;
   box-sizing: border-box;
-  margin-top: -200px;
-  margin-bottom: -300px;
+  margin-top: -170px;
+  
 }
 
 .footer-box {
   background-color: #FBFAF8;
   max-width: 1270px;
   width: 100%;
-  padding: 60px 40px;
+  padding: 60px 40px 0px;
   border-radius: 22.69px;
   box-sizing: border-box;
 }
@@ -578,6 +583,7 @@ h6 {
   font-family: 'DM Sans', sans-serif;  /* fuente consistente */
   color: #38455A;                      /* color texto */
   margin-bottom: 16px;                 /* separación uniforme */
+  line-height: 150%;
 }
 
 /* Peso y tamaño para el h4 */
@@ -703,6 +709,118 @@ h6 {
   font-size: 13px;
 }
 
+
+
+
+
+
+
+
+
+.footer .footer-newsletter h4 {
+  font-size: 16px;
+  font-family: var(--default-font);
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #38455A;
+}
+
+.footer .footer-newsletter p {
+  font-size: 14px;
+  color: #38455A;
+  margin-bottom: 15px;
+  font-family: var(--default-font);
+}
+
+.footer .footer-newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer .footer-newsletter input[type="email"] {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: var(--default-font);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.footer .footer-newsletter button.btn-newsletter {
+  font-size: 16px !important;
+  width: 100%;
+  max-width: 390.81px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #FBFAF8;
+  color: #38455A;
+  font-weight: 500;
+  border-radius: 35px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--default-font);
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.footer .footer-newsletter button.btn-newsletter:hover {
+  color: #FF7A4A;
+  transform: scale(1.05);
+  background-color: #FBFAF8;
+}
+
+
+.footer .footer-top .row {
+  display: flex;
+  justify-content: center; /* centra las columnas horizontalmente */
+  gap: 100px; /* espacio entre columnas */
+  flex-wrap: wrap; /* que se acomoden en varias filas si hace falta */
+}
+
+.footer .footer-top .col-lg-4 {
+  flex: 0 1 30%; /* ancho aproximado de cada columna, ajustalo si querés */
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+  .footer .footer-top .col-md-6 {
+    flex: 0 1 100%;
+  }
+  .footer .footer-top .col-md-3 {
+    flex: 0 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    min-height: 1300px;
+    padding: 40px 15px;
+  }
+}
+
+.creditos-final {
+  text-align: center;
+  font-size: 14px;
+  color: #38455A;
+  font-family: var(--default-font);
+  opacity: 0.7;
+  background: transparent;
+  padding: 0 !important;
+  margin: -50px !important;
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
@@ -792,9 +910,13 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 90px 0;
+  padding: 80px 0;
   scroll-margin-top: 90px;
   overflow: clip;
+}
+
+section#modelos {
+  padding-top: 0px !important; /* Ajustá el valor a lo que necesites */
 }
 
 @media (max-width: 1199px) {
@@ -869,8 +991,8 @@ section,
 
 
 .hero .hero-content p {
-  max-width: 1000px; /* más angosto para la descripción */
-  margin: 0 auto;
+  max-width: 550px; /* más angosto para la descripción */
+  margin: 0;
 }
 .hero::before {
   content: "";
@@ -886,7 +1008,7 @@ section,
 .hero .hero-content {
   position: relative;
   z-index: 1;
-  padding: 200px 20px 0 20px; /* arriba: 200px, laterales: 20px */
+  padding: 228px 20px 0 20px; /* arriba: 200px, laterales: 20px */
   max-width: 1200px; /* o incluso 1300px si tu pantalla es 1440px */
   margin: 0 auto;
 }
@@ -1146,7 +1268,7 @@ section,
   .hero .hero-content p {
     font-size: 18px !important;
     line-height: 1.5;
-    max-width: 90%;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -1440,13 +1562,16 @@ section,
     font-size:18.48px !important; /* 30 * 0.65 */
   }
 
-  .puntos-serif {
-    font-size: 29.58px !important; /* 48 * 0.65 */
+@media (max-width: 768px) {
+  #features .combined-title {
+    text-align: left;
   }
+}
 
   .combined-title {
     font-size: 37.26px !important; /* 53.22 * 0.65 */
     margin-bottom: 10px; /* ajustar si hace falta */
+    
   }
 
   .combined-title .dm-serif-text {
@@ -1458,12 +1583,19 @@ section,
     line-height: 1.4;
   }
 
-  /* Ajuste para padding lateral en el contenedor padre para que la imagen llegue al borde */
-  .features.section,
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
+ .features.section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
 
   /* Opcional: si querés que la imagen ocupe todo el ancho (adaptando a móvil) */
   .img-sin-margen-izq,
@@ -1484,7 +1616,22 @@ section,
     }
 
 
+@media (max-width: 768px) {
+  .puntos-serif {
+    font-size: 38px !important; /* ajuste mobile */
+    margin-top: 5px;
+  }
 
+  /* Versión alineada a la izquierda solo en mobile */
+  .puntos-serif.puntos-izq {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0.5rem;
+    margin-top: 5px;
+    
+  }
+}
 
 
 @media (max-width: 468px) {
@@ -1589,8 +1736,8 @@ section,
   height: 547px;
   object-fit: contain;
   display: inline-block;  /* clave para que respete el alineado */
-  margin-left: 0px;      /* si querés separar del texto */
-  margin-right: 0;        /* sin margen derecho */
+  margin-left: 50px !important;      /* si querés separar del texto */
+  margin-right: 0px !important;        /* sin margen derecho */
 }
 
 
@@ -1606,9 +1753,9 @@ section,
 
 .puntos-serif {
   font-family: "DM Serif Text", serif;
-  font-size: 48px;
+  font-size: 38px;
   color: var(--accent-color);
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   text-align: left;
 }
 
@@ -1626,7 +1773,7 @@ section,
 .combined-title .dm-serif-text {
   font-family: "DM Serif Text", serif;
   font-weight: 400;
-  font-size: 56.34px; /* puede heredar o estar definido acá si es distinto */
+  font-size: 56px; /* puede heredar o estar definido acá si es distinto */
 }
 
 .descripcion {
@@ -1645,7 +1792,9 @@ section,
 
 
 
-
+.combined-title br {
+  line-height: 0; /* o 1, o ajusta a tu gusto */
+}
 
 
 
@@ -1660,7 +1809,7 @@ section,
 }
 
 .features-cards.section {
-  background-color: #059652;
+  background-color: #EBE6DD;
   background-image: url(../img/FondoCaracterísticas.png);
   background-size: cover;        /* Para que se estire y cubra toda la sección */
   background-position: center;   /* Para centrarla */
@@ -1676,7 +1825,7 @@ section,
   text-align: center;
   font-family: "Dm Sans", sans-serif;
   font-weight: 500;
-  font-size: 53.22px;
+  font-size: 54px;
   line-height: 120%;
   color: #38455A;
   margin-bottom: 30px;
@@ -1851,13 +2000,13 @@ section,
 
 .vector-fondo {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100vw; /* ancho completo de la ventana */
   height: auto;
   z-index: 0; /* por detrás del contenido */
   pointer-events: none; /* evita que interfiera con clicks */
-  margin-top: 300px;
+  margin-top: 400px;
 }
 
 
@@ -1892,9 +2041,9 @@ section,
 
 .puntos-serif-centrados {
   font-family: "DM Serif Text", serif;
-  font-size: 40px;
+  font-size: 38px;
   color: var(--accent-color);
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
@@ -1932,40 +2081,80 @@ section,
   line-height: 150%;
 }
 
-/* Espaciado personalizado entre columnas (102px) */
-@media (min-width: 992px) {
-  .gx-custom {
-    --bs-gutter-x: 102px;
-  }
+
+
+
+/* Ocultamos los vectores móviles por defecto */
+.vector-fondo-mobile-1,
+.vector-fondo-mobile-2 {
+  display: none;
 }
 
-
-
-
-
+/* MOBILE: activar y personalizar vectores móviles */
 @media (max-width: 768px) {
-  .subtitulo {
-    font-size: calc(26.41px * 0.7); /* ≈ 18.5px */
+  /* Ocultar el vector general */
+  .vector-fondo {
+    display: none;
   }
 
-  .puntos-serif-centrados {
-    font-size: calc(40px * 0.7); /* ≈ 28px */
+  .columna-imagen {
+    position: relative; /* necesario para que el vector se posicione sobre esta caja */
   }
 
-  .combined-title {
-    font-size: calc(36px * 0.7); /* ≈ 25px */
+  .vector-fondo-mobile-1,
+  .vector-fondo-mobile-2 {
+    display: block;
+    position: absolute;
+    top: 60px; /* podés ajustar */
+    width: 130vw; /* más grande que el ancho visible */
+    height: 300px;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: cover;
   }
 
-  .combined-title .dm-serif-text {
-    font-size: calc(36px * 0.7); /* ≈ 25px, ajustalo si tenés otro valor */
+  /* Vector de la primera imagen */
+  .vector-fondo-mobile-1 {
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  width: 200%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+  /* Vector de la segunda imagen */
+  .vector-fondo-mobile-2 {
+  position: absolute;
+  top: 60px;
+  left: -40px;
+  width: 200%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+    transform: scaleX(-1); /* INVIERTE horizontalmente */
+}
+  /* Asegura que el contenido esté por encima del vector */
+  .img-mediaelipse,
+  .titulo-imagen,
+  .texto-imagen {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Redimensionar imágenes para mobile */
+  .img-mediaelipse {
+    width: 70%;
+    height: auto;
   }
 
   .titulo-imagen {
-    font-size: calc(40px * 0.7); /* ≈ 28px */
+    font-size: calc(40px * 0.7);
   }
 
   .texto-imagen {
-    font-size: calc(21px * 0.7); /* ≈ 15px */
+    font-size: calc(21px * 0.7);
     max-width: 90%;
   }
 }
@@ -1976,12 +2165,53 @@ section,
   .img-mediaelipse {
     width: 70%;
     height: auto;
+    margin-top: 20px; /* AUMENTÁ o REDUCÍ según necesites */
+    margin-bottom: 24px; /* ya lo tenías, lo podés ajustar también */
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo-imagen {
+    font-size: calc(40px * 0.7); /* ≈ 28px */
+    margin-top: 0px;  /* ajustá según visual */
+    margin-bottom: 12px;
+  }
+
+  .texto-imagen {
+    font-size: calc(21px * 0.7); /* ≈ 15px */
+    max-width: 90%;
+    margin: 0 auto 30px auto; /* centrado + espacio inferior */
+    line-height: 1.4; /* opcional: mejora legibilidad */
+  }
+}
+
+@media (max-width: 768px) {
+  .combined-title {
+    display: block;
+    text-align: center;
+    
+  }
+}
+
+
+@media (max-width: 768px) {
+  .combined-title {
+    display: block;
+    text-align: center;
   }
 }
 
 
 
+.br-mobile {
+  display: none;
+}
 
+@media (max-width: 768px) {
+  .br-mobile {
+    display: inline;
+  }
+}
 
 
 /*--------------------------------------------------------------
@@ -1989,7 +2219,7 @@ section,
 --------------------------------------------------------------*/
 .call-to-action .container {
   background-image:url(assets/img/Fondo-1.jpg);
-  background-color: #059652;
+  background-color: #FBFAF8;
   color: #38455A;
   position: relative;
   overflow: hidden;
@@ -2105,6 +2335,8 @@ section,
 }
 
 
+
+
 /* Hover: agranda + cambia color */
 .btn-cta-custom:hover {
   color: #FF7A4A;
@@ -2116,6 +2348,40 @@ section,
   transform: scale(1.08);
 }
 
+@media (max-width: 430px) {
+  #call-to-action .container {
+    width: 285px;
+    height: 525px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  /* Cambia la imagen de fondo solo en mobile */
+  .new-beach-section .container {
+    background-image: url(../img/SépartedelcambioMobile.png); /* <-- Cambiá esto al path correcto */
+  }
+
+  .btn-cta-custom {
+    width: 234px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 30px; /* Ajustá según necesidad */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
 
 
 /*--------------------------------------------------------------
@@ -2325,102 +2591,37 @@ section,
   opacity: 1;
 }
 
-@media (max-width: 576px) {
-  #Modelos .row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
-  .texto-modelo {
-    order: 1;
-  }
-
-  .imagen-modelo {
-    order: 2;
-  }
-
-  .color-selector {
-    order: 3;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 25px;
-  }
-
-  .subtitulo {
-    font-size: 21px;
-  }
-
-  .puntos-serif {
-    font-size: 34px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-  }
-
-  .combined-title {
-    font-size: 38px;
-    line-height: 110%;
-    margin-bottom: 20px;
-  }
-
-  .combined-title .dm-serif-text {
-    font-size: 40px;
-  }
-
-  .img-sin-margen-izq-modelos {
-    width: 70%;
-    height: auto;
-    margin: 30px auto;
-  }
-
-  .color-circle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .color-description {
-    font-size: 13px;
-  }
-}
-
-
-@media (max-width: 576px) {
-  #Modelos .row {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* Orden de las columnas dentro de .row */
+@media (max-width: 768px) {
   .texto-modelo {
     order: 1 !important;
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
   .imagen-modelo {
     order: 2 !important;
-    margin: 30px 0;
+    display: block !important;
+    text-align: left !important; /* 👈 esto quita el centrado */
+    
   }
 
-  /* Dentro de texto-modelo, ordenar el texto principal y los colores */
-  .texto-principal {
-    order: 1;
+  .imagen-modelo img.img-sin-margen-izq-modelos {
+    width: 85% !important;
+    max-width: 400px !important;
+    height: auto !important;
+    display: block !important;
+    margin-left: 0 !important; /* 👈 asegúrate de que no haya centrado */
+    transform: translateX(-30px); /* 👈 mueve a la izquierda */
   }
 
   .color-selector {
     order: 3;
-    margin-top: 20px;
-    display: flex;
     justify-content: center;
     gap: 1.5rem;
+    margin-top: 25px;
   }
 }
 
@@ -2458,6 +2659,15 @@ section,
 .clients .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -2643,7 +2853,6 @@ section,
 /* Fondo marrón */
 .brown-background {
   background-color: #EBE6DD;
-  padding: 4rem 0;
 }
 
 .imagenes-cartas{
@@ -2680,7 +2889,7 @@ section,
 /* Card blanca flotando debajo */
 .modelo-card {
   background: #FBFAF8;
-  padding: 2rem 2rem 2rem;
+  padding: 1.5rem 2rem 1rem;
   border-radius: 22.69px;
   width: 90%;  /* se ajusta al 90% del contenedor */
   max-width: 362px;
@@ -2705,7 +2914,7 @@ section,
 
 .puntos {
   color: #ff774e;
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 0.5rem;
 }
 
@@ -2717,6 +2926,33 @@ section,
 
 
 
+
+.fondoelegi {
+  background-color: #EBE6DD;
+  background-image: url(../img/FondoMasTRIWA.png);
+  background-size: cover;        /* Para que se estire y cubra toda la sección */
+  background-position: center;   /* Para centrarla */
+  background-repeat: no-repeat;  /* Para que no se repita */
+  min-height: 500px;
+}
+
+
+@media (max-width: 767px) {
+  .modelo-card-wrapper {
+    margin-bottom: 50px; /* podés ajustar este valor */
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .fondoelegi {
+    background-image: url('../img/FondoMasTRIWAMobile.png'); /* 📸 tu imagen mobile */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 
 
 
